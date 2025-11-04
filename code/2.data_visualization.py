@@ -1,4 +1,3 @@
-#import library
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -17,7 +16,7 @@ chunk_1 = pd.read_csv(dst1_csv)
 chunk_2 = pd.read_csv(dst2_csv)
 full_csv = pd.concat([chunk_1, chunk_2], ignore_index=True)
 
-#path
+#Save path
 SAVE_PATH = "/Users/whynot.son/Downloads/Test/results_hehe"
 os.makedirs(SAVE_PATH, exist_ok=True)
 
@@ -65,11 +64,11 @@ def data_distribution(top_n=20):
 #main
 if __name__ == "__main__":
     num_cols = ['receiver_latitude', 'receiver_longitude', 'receiver_elevation_m', 'p_arrival_sample',
-                  'p_weight', 'p_travel_sec', 's_arrival_sample', 's_weight',
-                  'source_latitude', 'source_longitude',
-                  'source_magnitude', 'source_distance_deg',
-                  'source_distance_km', 'back_azimuth_deg',
-                  ]
+                'p_weight', 'p_travel_sec', 's_arrival_sample', 's_weight',
+                'source_latitude', 'source_longitude',
+                'source_magnitude', 'source_distance_deg',
+                'source_distance_km', 'back_azimuth_deg',
+                ]
     data_distribution(top_n=45)  #can change
     histogram(num_cols)
     corel_mtx(num_cols)
@@ -91,7 +90,7 @@ def waveform_spectrogram_plot(signal_path,signal_index,signal_list):
     ax1.legend(loc='lower right',fontsize=10)
     ax1.set_ylabel('Amplitude (counts)')
     ax1.set_xlabel('Time (s)')
-    im = ax2.specgram(data[:,2],Fs=100,NFFT=256,cmap='jet',vmin=-10,vmax=25); # plot spectrogram
+    im = ax2.specgram(data[:,2],Fs=100,NFFT=256,cmap='jet',vmin=-10,vmax=25) # plot spectrogram
     ax2.set_ylabel('Frequency (Hz)')
     ax2.set_xlabel('Time (s)')
     ax3.psd(data[:,2],256,100,color='cornflowerblue') # plot power spectral density

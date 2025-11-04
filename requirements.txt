@@ -1,31 +1,12 @@
-# Core data science libraries
 numpy>=1.21
 pandas>=1.3
-
-# HDF5 support
 h5py>=3.1
-
-# Plotting
 matplotlib>=3.4
 seaborn>=0.12
-
-# Image I/O / processing
 opencv-python>=4.5
 Pillow>=9.0
-
-# Progress bars
 tqdm>=4.64
-
-# Machine learning / deep learning
-# NOTE: For PyTorch, choose the correct wheel for your CUDA version using
-# https://pytorch.org/get-started/locally/ . The plain 'torch' entry will install
-# a CPU-only wheel on many platforms; if you need CUDA-enabled PyTorch, use
-# the command suggested on the PyTorch website instead of `pip install -r requirements.txt`.
 torch>=2.0
 torchvision>=0.15
-
-# Scikit-learn for metrics and dataset splitting
 scikit-learn>=1.1
-
-# Optional (improve file read/write stability)
 pyyaml>=6.0

@@ -145,7 +145,7 @@ class SeismicCNN():
         self.train_labels = torch.LongTensor(self.train_labels)
         self.test_labels = torch.LongTensor(self.test_labels)
 
-        # Convert images sang Tensor (luôn float32) và thêm channel dimension
+        # Convert images to tensor (luôn float32) and add channel dimension
         self.train_images = torch.FloatTensor(self.train_images).unsqueeze(1)  # Add channel dimension
         self.test_images = torch.FloatTensor(self.test_images).unsqueeze(1)    # Add channel dimension
 
